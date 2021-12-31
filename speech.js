@@ -52,12 +52,13 @@ function readOutLoud(msg){
 		var t2=today.getHours()+":"+today.getMinutes()
 		document.querySelector(".result").textContent=t2
 	}
-	if(msg.includes("download")){
+	if(msg.includes("download")||msg.includes("install")){
 		speech.text=`Opening in your browser but before that check the permissions for popups in browser settings`;
 		setTimeout(()=>{
+			alert();
 			window.open(`https://www.google.com/search?q=${msg}`,"_blank");
 			recognition.stop();
-		},5000)
+		},10000)
 		
 	}
 	if(msg.includes("bye")){
