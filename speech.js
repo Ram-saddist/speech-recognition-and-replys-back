@@ -46,7 +46,7 @@ function readOutLoud(msg){
 		speech.text="It is really a plesant day for me! How may I help you?"
 	}
 	
-	if(msg.includes("what's the current time")){
+	if(msg.includes("time")){
 		const today=new Date();
 		var time="current time is"+today.getHours()+" hours:"+ today.getMinutes()+" minutes";
 		speech.text=time;
