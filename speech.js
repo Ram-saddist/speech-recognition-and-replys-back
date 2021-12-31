@@ -45,13 +45,16 @@ function readOutLoud(msg){
 		//speech.text=finalResult;
 		speech.text="It is really a plesant day for me! How may I help you?"
 	}
-	
 	if(msg.includes("time")){
 		const today=new Date();
 		var time="current time is"+today.getHours()+" hours:"+ today.getMinutes()+" minutes";
 		speech.text=time;
 		var t2=today.getHours()+":"+today.getMinutes()
 		document.querySelector(".result").textContent=t2
+	}
+	if(msg.includes("download")){
+		speech.text=`Opening ${msg} in browser`
+		window.open(`https://www.google.com/search?q=${msg}`);
 	}
 	if(msg.includes("bye")){
 		recognition.stop();
@@ -60,11 +63,5 @@ function readOutLoud(msg){
 	speech.volume=1;
 	speech.rate=1;
 	speech.pitch=1;
-
-
 	window.speechSynthesis.speak(speech)
 }
-
-
-
-
