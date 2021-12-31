@@ -53,9 +53,12 @@ function readOutLoud(msg){
 		document.querySelector(".result").textContent=t2
 	}
 	if(msg.includes("download")){
-		speech.text=`Opening in your browser but before that check the permissions for popups`
-		window.open(`https://www.google.com/search?q=${msg}`,"_blank");
-		recognition.stop();
+		speech.text=`Opening in your browser but before that check the permissions for popups in browser settings`;
+		setTimeout(()=>{
+			window.open(`https://www.google.com/search?q=${msg}`,"_blank");
+			recognition.stop();
+		},5000)
+		
 	}
 	if(msg.includes("bye")){
 		recognition.stop();
