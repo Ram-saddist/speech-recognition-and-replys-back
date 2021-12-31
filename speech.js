@@ -52,7 +52,6 @@ function readOutLoud(msg){
 	}
 	if(msg.includes("time")){
 		const today=new Date();
-		
 		var time =today.toLocaleString('en-US', { hour: 'numeric', minute: 'numeric', hour12: true });
 		speech.text=time;
 		var t2=time;
@@ -64,17 +63,35 @@ function readOutLoud(msg){
 			window.open(`https://www.google.com/search?q=${msg}`,"_blank");
 			recognition.stop();
 		},9000)
-		
 	}
 	if(msg.includes("thank you")){
-		speech.text="Its my pleasure. You you are satisfied with my work Please say iam satisfied with your work"
+		speech.text="Its my pleasure. If you are satisfied with my work Please say iam satisfied with your work"
 	}
 	if(msg.includes("bye")||msg.includes("stop")||msg.includes("satisfied")){
 		recognition.stop();
 		speech.text="I am really happy for helping you! Have a great day"
 	}
+	if(msg.includes("temperature")){
+		speech.text="Yeah sure! Can i have the city name in this formate"
+		document.querySelector(".result").textContent="City name is Vijayawada"
+	}
+	if(msg.includes("city")){
+		let apikey="2e7aaafe0adff930667ae5eced67770e";
+		let name=msg.split(" ");
+		var s=name[name.length-1];
+		const url=`https://api.openweathermap.org/data/2.5/weather?q=${s}&appid=${apikey}&units=metric`;
+		fetch(url)
+			.then(res=>res.json())
+			.then(data=>{
+				speech.text=`Temperature in ${s} is ${data.main.temp}`
+				console.log(`Temperature in ${s} is ${data.main.temp}`)
+			})
+	}
 	speech.volume=1;
 	speech.rate=1;
 	speech.pitch=1;
-	window.speechSynthesis.speak(speech)
+	setTimeout(()=>{
+		window.speechSynthesis.speak(speech)
+	},1000)
+	
 }
