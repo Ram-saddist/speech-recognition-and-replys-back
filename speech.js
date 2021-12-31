@@ -23,10 +23,18 @@ recognition.onresult=(event)=>{
 		result.textContent=""
 	},5000)
 }
-
-btn.addEventListener("click",()=>{
+function work(){
 	const speech=new SpeechSynthesisUtterance();
 	speech.text="Hi this is Raam? How may i help you ";
+	speech.volume=1;
+	speech.rate=1;
+	speech.pitch=1;
+	window.speechSynthesis.speak(speech)
+	recognition.start()
+}
+btn.addEventListener("click",()=>{
+	const speech=new SpeechSynthesisUtterance();
+	speech.text="Hi this is Raam? I am your assistant";
 	speech.volume=1;
 	speech.rate=1;
 	speech.pitch=1;
@@ -50,15 +58,18 @@ function readOutLoud(msg){
 		var t2=time;
 		document.querySelector(".result").textContent=t2
 	}
-	if(msg.includes("download")||msg.includes("install")){
-		speech.text=`Opening, Please enable the popup settings in browser settings and try again`;
+	if(msg.includes("download")||msg.includes("install")||msg.includes("open")){
+		speech.text=`Give me a second i am going to open it`;
 		setTimeout(()=>{
 			window.open(`https://www.google.com/search?q=${msg}`,"_blank");
 			recognition.stop();
 		},9000)
 		
 	}
-	if(msg.includes("bye")||msg.includes("stop")){
+	if(msg.includes("thank you")){
+		speech.text="Its my pleasure. You you are satisfied with my work Please say iam satisfied with your work"
+	}
+	if(msg.includes("bye")||msg.includes("stop")||msg.includes("satisfied")){
 		recognition.stop();
 		speech.text="I am really happy for helping you! Have a great day"
 	}

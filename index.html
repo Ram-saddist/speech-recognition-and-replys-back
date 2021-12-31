@@ -4,43 +4,7 @@
 	<title>Speech recognition functionality</title>
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<link rel="icon" href="https://i.gifer.com/2QJe.gif"/>
-	<style type="text/css">
-		*{
-			margin: 0%;
-		}
-		body{
-			background-image: url("https://us.123rf.com/450wm/apostrophe/apostrophe1604/apostrophe160400109/56270058-metallic-primary-blue-background-shiny-foil-banner-texture.jpg?ver=6");
-			background-size: 1999px 1999px;
-			background-repeat: no-repeat;
-		}
-		h1{
-			margin: 5% 0%;
-		}
-		.main{
-			display: flex;
-			border-radius: 25px;
-			background-color: white;
-			width: 40%;
-			padding: .5%;
-			margin: auto;
-			margin-top:20%;
-		}
-		.a{
-			border: 1px solid white;
-			background-color: white;
-			padding: 2%;
-			width: 90%;
-		}
-		.fas{
-			font-size:40px;
-			cursor:pointer;
-			color:#b10f5b;
-		}
-		.speak{
-			background: none;
-			border: none;
-		}
-	</style>
+	<link rel="stylesheet" href="style.css"/>
 	<link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css" integrity="sha384-AYmEC3Yw5cVb3ZcuHtOA93w35dYTsvhLPVnYs9eStHfGJvOvKxVfELGroGkvsg+p" crossorigin="anonymous"/>
 </head>
 <body>
@@ -52,6 +16,7 @@
 		</p>
 		<button class="speak"><i class="fas fa-microphone"></i></button>
 	</div>
+	<p class="tip">click the mic</p>
 	<script src="speech.js"></script>
 </body>
 </html>

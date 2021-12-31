@@ -1,0 +1,67 @@
+*{
+	margin: 0%;
+}
+body{
+	background-image: url("https://us.123rf.com/450wm/apostrophe/apostrophe1604/apostrophe160400109/56270058-metallic-primary-blue-background-shiny-foil-banner-texture.jpg?ver=6");
+	background-size: 1999px 1999px;
+	background-repeat: no-repeat;
+}
+h1{
+	margin: 5% 0%;
+}
+.main{
+	display: flex;
+	border-radius: 25px;
+	background-color: white;
+	width: 33%;
+	padding: .5%;
+	margin: auto;
+    margin-top:20%;
+}
+.a{
+	border: 1px solid white;
+	background-color: white;
+	padding: 2%;
+	margin-left:3%;
+	width: 90%;
+}
+.fas{
+	font-size:30px;
+	cursor:pointer;
+	color:#b10f5b;
+}
+.speak{
+	background: none;
+	border: none;
+}
+.tip{
+	color:white;
+	margin:2% 0% 0% 58%;
+	font-size: 25px;
+}
+@media (max-width:992px)and (min-width:769px)
+{
+	.a{width:90%;}
+	.main{width: 40%;padding:1%;}
+	.fas{font-size:20px;}
+}
+@media (max-width:768px)
+{	
+	.a{ width:90%;}
+	.main{width: 40%;}
+	.fas{font-size:20px;}
+}
+@media (max-width:767px)and (min-width:481px)
+{
+	.a{width:90%;}
+	.main{width: 40%;padding:1%;}
+	.fas{font-size:20px;}
+	.tip{font-size: 17px;margin-left: 55%}
+}
+@media (max-width:480px)
+{
+	.a{ width:90%;}
+	.main{width: 50%;}
+	.fas{font-size:20px;}
+	.tip{font-size: 15px;margin-left: 55%}
+}
