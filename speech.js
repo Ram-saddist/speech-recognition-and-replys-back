@@ -51,7 +51,7 @@ function readOutLoud(msg){
 		document.querySelector(".result").textContent=t2
 	}
 	if(msg.includes("download")||msg.includes("install")){
-		speech.text=`Opening in your browser, Please enable the popup settings in browser settings`;
+		speech.text=`Opening, Please enable the popup settings in browser settings and try again`;
 		setTimeout(()=>{
 			window.open(`https://www.google.com/search?q=${msg}`,"_blank");
 			recognition.stop();
