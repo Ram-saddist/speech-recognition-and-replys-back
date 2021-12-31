@@ -54,7 +54,7 @@ function readOutLoud(msg){
 	}
 	if(msg.includes("download")){
 		speech.text=`Opening ${msg} in browser`
-		window.open(`https://www.google.com/search?q=${msg}`);
+		window.open(`https://www.google.com/search?q=${msg}`,"_blank");
 	}
 	if(msg.includes("bye")){
 		recognition.stop();
