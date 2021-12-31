@@ -27,7 +27,7 @@ recognition.onresult=(event)=>{
 
 btn.addEventListener("click",()=>{
 	const speech=new SpeechSynthesisUtterance();
-	speech.text="Hi this is jarvis? Allow the microphone So i can help you ";
+	speech.text="Hi this is Raam? How may i help you ";
 	speech.volume=1;
 	speech.rate=1;
 	speech.pitch=1;
@@ -47,21 +47,25 @@ function readOutLoud(msg){
 	}
 	if(msg.includes("time")){
 		const today=new Date();
-		var time="current time is"+today.getHours()+" hours:"+ today.getMinutes()+" minutes";
+		//var time="current time is"+today.getHours()+" hours:"+ today.getMinutes()+" minutes";
+		var time =today.toLocaleString('en-US', { hour: 'numeric', minute: 'numeric', hour12: true });
 		speech.text=time;
-		var t2=today.getHours()+":"+today.getMinutes()
+		//var t2=today.getHours()+":"+today.getMinutes()
+		var t2=time;
 		document.querySelector(".result").textContent=t2
+		/*
+			today.toLocaleString('en-US', { hour: 'numeric', minute: 'numeric', hour12: true })
+		*/
 	}
 	if(msg.includes("download")||msg.includes("install")){
-		speech.text=`Opening in your browser but before that check the permissions for popups in browser settings`;
+		speech.text=`Opening in your browser, Please enable the popup settings in browser settings`;
 		setTimeout(()=>{
-			alert();
 			window.open(`https://www.google.com/search?q=${msg}`,"_blank");
 			recognition.stop();
-		},10000)
+		},9000)
 		
 	}
-	if(msg.includes("bye")){
+	if(msg.includes("bye")||msg.includes("stop")){
 		recognition.stop();
 		speech.text="I am really happy for helping you! Have a great day"
 	}

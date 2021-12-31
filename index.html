@@ -7,44 +7,34 @@
 		*{
 			margin: 0%;
 		}
-		body{
-			background-color: black;
-		}
 		h1{
-			color: white;
 			margin: 5% 0%;
 		}
 		.a{
 			border: 1px solid gray;
-			padding: 5%;
-			padding-left: 0%;
-			padding-bottom: 15%;
-			width: 50%;
-			border-radius: 8px;
-			margin-bottom: 5%;
-			margin-left: 0%;
+			padding: 1.8%;
+			width: 20%;
+		}
+		.fas{
+			font-size:32px;
+			 cursor:pointer;
 		}
 		.speak{
-			background-color: green;
-			color: white;
-			padding: 0.5%;
-			width: 5%;
-			border-radius: 10px;
-			box-shadow: 0%;
+			background: none;
 			border: none;
 		}
-        .result{
-        	color: white;
-        }
 	</style>
+	<link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css" integrity="sha384-AYmEC3Yw5cVb3ZcuHtOA93w35dYTsvhLPVnYs9eStHfGJvOvKxVfELGroGkvsg+p" crossorigin="anonymous"/>
 </head>
 <body>
 	<h1>Speech Recognition</h1>
-	<p class="a">
-		<span class="result"></span>
-		<span class="time"></span>
-	</p>
-	<button class="speak">Speak</button>
+	<div style="display: flex;">
+		<p class="a">
+			<span class="result"></span>
+			<span class="time"></span>
+		</p>
+		<button class="speak"><i class="fas fa-microphone"></i></button>
+	</div>
 	<script src="speech.js"></script>
 </body>
 </html>
