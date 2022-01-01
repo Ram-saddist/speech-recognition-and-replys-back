@@ -92,6 +92,6 @@ function readOutLoud(msg){
 	speech.pitch=1;
 	setTimeout(()=>{
 		window.speechSynthesis.speak(speech)
-	},1000)
+	},500)
 	
 }
