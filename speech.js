@@ -90,6 +90,7 @@ function readOutLoud(msg){
 	speech.volume=1;
 	speech.rate=1;
 	speech.pitch=1;
-	window.speechSynthesis.speak(speech)
-	
+	setTimeout(()=>{
+		window.speechSynthesis.speak(speech)
+	})
 }
